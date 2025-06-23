@@ -528,7 +528,9 @@ const countValue = createCounter()
 countValue.increment() //1
 countValue.increment() //2
 countValue.getCount() //2
-countValue.decrement() //1
+countValue.decrement() //1 
+
+
 
 
 
