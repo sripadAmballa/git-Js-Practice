@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta 1="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type ="text/javascript">
+
+        function msg(){
+        alert("FUNCTION call")
+        }
+    </script>
+
+    <script src="basic.js"></script>
+    <script src="asynchronus.js"></script> 
+   
+</head>
+<body>
+    <p>Hello  JS Practice  OM Namashivaya</p>
+
+<p id="demo"> Java Script can change HTML content</p>
+
+
+<button type ="button" onClick="document.getElementById('demo').innerHTML ='Hello Change HTML Using JS'"> Click Me</button>
+
+
+<!-- Js can change the HTML Styles as well-->
+
+
+<button type ="button" onclick="document.getElementById('demo').style.color ='Green'"> Change Color</button>
+
+
+<script type="text/javascript"> document.write("Text Java script is  the context type that provide the information to the browser about the data")</script>
+<!--<script type=" text/javascript"> alert("Hello JS")</script> --->
+
+
+<input type ="button" value="Click" onclick="msg()">
+
+<p id ="demo1"></p>
+
+<button type ="button" onclick="document.write('Never call the document.write methode once the page is loaded it will override the whole document')"> click Document write</button>
+
+<br/>
+<br/>
+<script>
+    document.write(5+6)
+
+    // never call the document.write once the page is loaded it will  override the whole document 
+
+    
+    var car ="Volvo";
+
+    var car;
+    console.log(car)
+
+    var name = "Amballa" + " "+ "Sripad";
+
+    console.log(name)
+
+    var x = "5" + 2+3;
+    console.log(x) // 523
+
+    // if you put a number in quotes and the rest of the numbers will be treated as as strings and concatenated
+
+    var y11  = 2+8+"5";
+    console.log(y11)//105
+
+     let z = 10;
+     z= 20;
+     console.log(z)
+
+     let b  = "sripad";
+
+b= 10;
+console.log(b) //10
+
+
+
+{
+let name1 ="Ram";
+
+}
+ // console.log(name1)// ReferenceError
+
+
+ let full_Name = "My Name is \"Amballa Sripad\""  // My Name is "Amballa Sripad"
+
+console.log(full_Name)
+
+
+let text = 'Its\'s alright'
+
+     console.log(text) //Its's alright
+
+
+
+     let  qq = "John";
+
+      console.log(typeof(qq))// string
+
+      let yy = new String("John")
+
+
+      console.log(typeof(yy))// object
+
+      console.log( qq==yy) // true  ( == checks the only value) 
+console.log(qq === yy) // false ( === check the value and its data type )
+
+
+let strlength = " Sripad ";
+
+console.log(strlength.length)
+</script>
+
+<input type ="text" id ="inputText"/>
+<p id ="errorMessage"></p>
+<button type ="button"  onclick="validation()">Click </button>
+
+<h3>JAVA SCRIPT</h3>
+<p>JavaScript is an object-oriented programming language that can be used on both the client side and the server side. It is primarily used to make web pages interactive.
+
+    While HTML is used to structure web content and CSS is used to style it, JavaScript adds dynamic behavior — allowing for things like form validation, animations, data fetching, and real-time content updates.
+    
+    JavaScript is a synchronous, single-threaded language by default. This means that it executes one statement at a time, moving to the next statement only after the current one is completed.</p>
+<h3> Destructuring</h3>
+<p>Extract data from arrays objects Maps and set them into new Distinct  variable</p>
+<p>at a time we can able to extract multiple properties or items</p>
+
+<h3>CallBack</h3>
+
+<p>A call back is a function passed as an argument to another function</p>
+
+<h3>Higher Order function</h3>
+<p> A function which takes another function as an argument and return a function</p>
+<h3>SetTimeout</h3>
+<p>SetTimeout takes 2 arguments a calllback function and delay time a callback function is executed once the delay time has passed , after the current satck </p>
+
+<h3>SetInterval</h3>
+<p>SetInterval takes 2 argument callback function and  time interval in (milliseconds). The callback function is invoked repeatedly at every specified interval until it is clearined using <b>clearInterval</b></p>
+
+
+
+<p id ="dialoge"></p>
+<script>
+    //var tenure = Prompt("Please enter prefered tenure in years")
+
+ //document.getElementById("dialoge").innerHTML ="You have entered "+ tenure+ "years"
+
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
