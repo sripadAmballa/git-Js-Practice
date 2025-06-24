@@ -3754,6 +3754,218 @@ const arr100 = ages.reduce((acc,val)=>acc+= val)
 console.log(arr100)
 
 
+// Practice
+
+//Using Map method the Original array does not affects the loop
+// the Length of the arry is fixed in map method
+
+
+/// get event numbers using map method   [true, true, true, false, true, false]
+const arr57 = [20,30,2,75,12,51]
+const arr58 = arr57.map(val=>val%2==0);
+console.log(arr58) // [true, true, true, false, true, false]
+
+const arr59 = arr57.map(val=>{
+  if(val % 2 ==0){
+    return val
+  }
+})
+console.log(arr59)//[20, 30, 2, undefined, 12, undefined]
+
+// Map  method maintain the original length of the array
+
+
+// SORT
+const arr60 = [200,30,5,100,"sri","qbc",[],{}]
+
+console.log(arr60.sort()) // [Array(0), 100, 200, 30, 5, {…}, 'qbc', 'sri']
+
+// if array consists of mixed data using sort method first evey thing is converted into string
+
+
+// if you want to retrieve only numbers
+
+const arr61 = arr60.filter(val=>typeof val =='number');
+console.log(arr61) //[100, 200, 30, 5]
+
+//if you want to retrive only strings
+
+const arr62 = arr60.filter(val=>typeof val =='string');
+console.log(arr62) //['qbc', 'sri']
+
+// Constructor Object Function
+
+function ObjectFun(name,phone,address){
+  this.name = name,
+  this.phone = phone,
+  this.address = address
+}
+
+const obj39 = new ObjectFun("Chinnu",1234,"DOnkeshwar")
+console.log(obj39) //{name: 'Chinnu', phone: 1234, address: 'DOnkeshwar'}
+
+obj39.car = "Audi"
+console.log(obj39) // {name: 'Chinnu', phone: 1234, address: 'DOnkeshwar', car: 'Audi'}
+console.log(obj39.car)//Audi
+
+const obj40 = new ObjectFun("Datta",34545,"DNK");
+console.log(obj40) // {name: 'Datta', phone: 34545, address: 'DNK'}
+
+
+// Adding Propery to the function
+ObjectFun.prototype.pin = 500300;
+
+console.log(obj39)
+console.log(obj39.pin) //500300
+console.log(obj40)  //{name: 'Datta', phone: 34545, address: 'DNK'}
+console.log(obj40.pin) //500300
+//Even though pin is not an own property of obj39 and obj40  it's available through the protytype chain
+
+// Here car property is assigne to obj39 instance not to the obj40
+// if you want to use car proporty for obj40 use __proto__ concept
+
+obj40.__proto__ = obj39
+
+console.log(obj40.car) //Audi
+
+// Other ways to access car for obj40 instance
+obj40.__proto__ = Object.assign(arr40.__proto__,arr39)
+
+console.log(obj40.car)
+
+// call()  apply()  bind()
+
+
+// Used to invoke a function by passing a reference that points to the this variable inside the method
+
+const vehicle1 ={
+  name:"Pulser",
+  model:150
+
+}
+const vehicleDetails ={
+  details :function(){
+    return this.name  + " "+this.model
+  }
+}
+
+console.log(vehicleDetails.details.call(vehicle1)) //Pulser 150
+
+
+// example
+
+function P1(name,id,address){
+  this.name = name,
+  this.id = id,
+  this.address= address
+}
+
+
+function P2(name,id ,address,age){
+  P1.call(this,name,id,address)
+  this.age = age
+}
+
+function result11(){
+  return this.name +" "+this.id+" "+this.address+" "+this.age
+}
+
+const C1 = new P1("RAMA",25,"Ayodhya");
+console.log(C1) //{name: 'RAMA', id: 25, address: 'Ayodhya'}
+console.log(result11.call(C1)) //RAMA 25 Ayodhya undefined
+
+
+
+const C2 = new P2("JAY",2300,"HYD",20);
+console.log(C2);  //{name: 'JAY', id: 2300, address: 'HYD', age: 20}
+console.log(result11.call(C2)) //JAY 2300 HYD 20
+
+// Closure
+// function along with its lexical scope bundled together is called closure
+
+function arithmetic(a){
+  let n= 5;
+  let m= 100;
+  return  function multiplication(){
+   return  n*a
+  }
+
+
+}
+const arith = arithmetic(10);
+console.log(arith())//50
+
+function addition(a){
+  return function add(b){
+    return a+b
+  }
+
+}
+
+console.log(addition(10)(50))//60
+
+
+// spread operator
+
+// Spread Operator in Array
+
+const arr63 = [1,2,3]
+let num3 = 4;
+num3= [...arr63,num3];
+console.log(num3) // [1, 2, 3, 4]
+
+
+const arr64 =[5,6];
+const combine = [...arr63,...arr64]
+console.log(combine) // [1, 2, 3, 5, 6]
+
+
+// Spread Operator in Objects
+
+const obj41 ={a:1,b:2}
+const obj42 = {c:3};
+const objSpread = {...obj41,...obj42};
+console.log(objSpread)// {a: 1, b: 2, c: 3}
+console.log(obj41)//{a: 1, b: 2}
+
+
+const obj43 ={a:10,b:20};
+const obj44 = {...obj43,x:40,y:30};
+console.log(obj44) //{a: 10, b: 20, x: 40, y: 30}
+
+// Spread Operator in function
+
+
+function sum(a,b,c){
+  return a+b+c
+}
+
+const arr65= [70,90,100]
+console.log(sum(...arr65)) //260
+
+// rest Operator
+function myFun5(a,b,...many){
+  console.log("a : ",a)
+  console.log("b : ",b)
+  console.log("many : ",many)
+
+}
+myFun5(10,20,40,4,43,56)
+
+/*
+
+a:10
+b:20
+many:[40, 4, 43, 56]
+
+*/
+
+
+
+
+
+
+
 
 
 
