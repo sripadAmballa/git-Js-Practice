@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<header>
+<title>Event HTML Parctice</title>
+<script src="./event.js" defer></script>
+<style>
+#main-container{
+    width:300px;
+    height: 300px;
+    border: 2px solid ;
+}
+#child-container{
+    width: 200px;
+    height: 200px;
+    border: 2px solid;
+}
+#grand-child-container{
+    width: 100px;
+    height: 100px;
+    border: 2px solid;
+}
+</style>
+
+</header>
+<body>
+
+   <!-- Basic Form--> 
+    <form id="myForm">
+        <label for ="name">FullName :</label>
+        <input type ="text" id = "name" placeholder="Please enter FullName"/><br>
+        <label for ="phone">Mobile :</label>
+        <input type ="number" id ="phone" placeholder="Please enter mobile number"/><br/>
+        <button type="submit" >Submit</button>
+
+    </form>
+    
+<!---  stopProgagation Example  -->
+    <div id ="main-container"> Parent
+        <div id ="child-container">Child
+        <div id ="grand-child-container">Grand Child</div>
+    </div>
+    </div>
+
+    <br>
+    <!-- PreventDefault-->
+
+    <div id ='demo1' style="background-color: orange; width:300px ;height:300px">
+        <a href="https://www.w3schools.com" id ="demo2">click me!</a>
+    </div>
+
+  
+
+</body>
+</html>
+
+

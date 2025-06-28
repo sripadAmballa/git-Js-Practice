@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Our superheroes</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="./heroes.css">
+  </head>
+
+  <body>
+
+      <header>
+
+      </header>
+
+      <section>
+
+      </section>
+
+      <script>
+async function populate() {
+
+  const requestUrl = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+  const request = new Request(requestUrl)
+    const response = await fetch(request)
+        if (!response.ok) {
+            throw new Error("Error in Fetching the details");
+        }
+
+      const superHeroes = await response.json();
+      console.log(superHeroes);
+      superHeroesHeader(superHeroes)
+      populateHeroes(superHeroes.members)
+}
+
+function superHeroesHeader(obj){
+const header = document.querySelector('header');
+const myH1 = document.createElement('h1'); // create a h1 element
+myH1.textContent = obj.squadName; // add text content to that h1 tag
+header.appendChild(myH1) // h1 tag is append as child to header
+
+// adding p tag to the header 
+
+const myPara = document.createElement('p');
+myPara.textContent = `Hometown: ${obj.homeTown} // Formed ${obj.formed} `;
+header.appendChild(myPara)
+
+}
+
+function populateHeroes(members){
+
+const section = document.querySelector('section');  
+
+for (let hero of members){
+  //console.log(hero)
+
+const article = document.createElement('article');
+const myH2 = document.createElement('h2');
+const myPara1 = document.createElement('p');
+const myPara2 = document.createElement('p');
+const myPara3 = document.createElement('p');
+const myList = document.createElement('ul')
+
+myH2.textContent = hero.name ;
+myPara1.textContent = `Secret identity: ${hero.secretIdentity}`;
+myPara2.textContent = `Age: ${hero.age}`
+myPara3.textContent = 'Superpowers:';
+
+
+const superPowers = hero.powers;
+
+for(let power of superPowers){
+  const listItem = document.createElement('li');
+  listItem.textContent = power;
+  myList.appendChild(listItem)
+}
+article.appendChild(myH2)
+article.appendChild(myPara1)
+article.appendChild(myPara2)
+article.appendChild(myPara3)
+article.appendChild(myList)
+
+section.append(article)
+
+
+
+
+
+
+}
+
+
+
+
+}
+
+
+populate()
+
+
+
+      </script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src ="./dom.js" defer></script>
+    <style>
+        .highlight{
+        color: green;
+        background-color: lightgrey;
+        padding: 10px;
+        width: 250px;
+        text-align: center;
+        }
+        .mouseOver-bg{
+            width:250px;
+            height:50px;
+            background-color:green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #myDiv1, #myp1{
+            background-color: orange;
+            padding: 50px;
+             border: 1px dotted;
+
+        }
+           #myDiv2, #myp2{
+            background-color: snow;
+            padding: 50px;
+            border: 1px dotted;
+            padding: 20px;
+
+        }
+    </style>
+</head>
+<body>
+
+    <!--
+    With the HTML DOM java script can access and change all html elements
+    1 Js can change all the html elements in the page
+    2 js can change all the HTML attribute in the page
+    3 Js can change all the css styles in the page
+    4 Js can remove the Existing HTML elements and attributes
+    5 Js can Add New HTML elements and attribute
+    6 JS can react all existing HTML events on the page
+    7 JS can create new HTML events in the page
+
+    -->
+    <!-- Change the Content of thee element  with id ="demo"-->
+<section>
+    
+</section>
+    <p id ="demo"></p>
+    <p id ="demo1">Finding HTML elements</p>
+    <p id ="demo2"></p>
+<!-- Finding HTML elements by tag name-->
+    <div>Hi I'm Amballa Sripad</div>
+    <div> Im from Nizamabad</div>
+    <p id ="demo3"></p>
+
+    <!-- Changing the value of an attribute-->
+     <!--<img id ="demo4" src="smiley.gif" alt="Image "> -->
+
+     <!-- Dynamic HTML Content-->
+      <p id ="date-and-time"></p>
+
+      <!-- Display Today Time-->
+       <p id ="time"></p>
+       <button onclick="displayTime()">Display Time</button>
+
+       <!-- Mouse Events-->
+
+       <div id="mouseOver-mouseOut" class="mouseOver-bg" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" onmousedown="mouseDown(this)" onmouseup="mouseUp(this)">MouseOver & MouseOut Event</div>
+       <!-- In this Example this keyword is refer to the current div element 
+       So obj inside the mouseOver() and mouseOut() function refer to the div 
+       -->
+
+       <!-- onClick event  --> 
+
+       <p id ="demo4"></p>
+       <button onclick="funClick()">onClick me !</button>
+
+       <!-- onClick using addEventListener-->
+        <p id="demo5">onclick Using Add Event Listener</p>
+
+        <!-- onMouseMove -->
+
+        <div onmousemove="mouseMove()" style="border:2px solid ">
+            <p style="border: 1px dotted;">onmousemove : <br/> <span id="demo6">count</span></p>
+        </div>
+<br>
+
+        <div onmouseleave="mouseLeave()" style="border:2px solid ">
+            <p style="border: 1px dotted;">onmouseLeave : <br/> <span id="demo7">count</span></p>
+        </div>
+<br>
+
+         <div onmouseout="mouseout()" style="border:2px solid ">
+            <p style="border: 1px dotted;">onmouseout : <br/> <span id="demo8">count</span></p>
+        </div>
+
+<!--- Event bubling-->
+
+<div id ="myDiv1">
+    <h2>Bubling</h2>
+    <p id ="myp1"> Click me</p>
+
+</div>
+
+<br>
+<br>
+<!-- Event Capturing-->
+
+<div id ="myDiv2">
+    <h2>Capturing</h2>
+    <p id="myp2"> Click me</p>
+
+</div>
+
+<section>
+
+</section>
+
+<br>
+<br>
+<!--Creating a form Using DOM-->
+  
+
+
+
+
+
+    
+</body>
+</html>
