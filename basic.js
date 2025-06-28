@@ -3959,13 +3959,7 @@ b:20
 many:[40, 4, 43, 56]
 
 */
-
-
-
-
-
-
-
+console.log("Push COde to Git hub")
 
 
 
